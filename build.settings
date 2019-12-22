@@ -1,0 +1,31 @@
+settings =
+{
+	iphone =
+	{
+		plist =
+        {
+		    MinimumOSVersion = "8.0",
+		    UIApplicationExitsOnSuspend = false,
+		   	
+            NSAppTransportSecurity =
+            {
+                NSAllowsArbitraryLoads = true,
+            },
+        },
+	},
+    android =
+    {
+        useGoogleServicesJson = true,
+    	usesPermissions =
+    	{
+        	"android.permission.INTERNET"
+    	},
+    	 
+    },
+    plugins =
+    {
+        ["plugin.firebaseCrashlytics"] = {
+            publisherId = "tech.scotth",
+        }
+    },
+}
