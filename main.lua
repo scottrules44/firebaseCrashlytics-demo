@@ -1,12 +1,12 @@
-local firebaseCrash = require "plugin.firebaseCrash"
-firebaseCrash.init(true)
+local firebaseCrashlytics = require "plugin.firebaseCrashlytics"
+firebaseCrashlytics.init(true)
 
 local widget = require("widget")
 
 local bg = display.newRect( display.contentCenterX, display.contentCenterY, display.actualContentWidth, display.actualContentHeight )
 bg:setFillColor( 1,.3,.3 )
 
-local title = display.newText( {text = "Firebase Crash \n          Plugin", fontSize = 30} )
+local title = display.newText( {text = "Firebase Crash \n     Plugin", fontSize = 30} )
 title.width, title.height = 300, 168
 title.x, title.y = display.contentCenterX, 168*.5
 title:setFillColor(1,1,1)
@@ -22,7 +22,7 @@ recordError = widget.newButton( {
     label = "Record Error",
     onEvent = function ( e )
         if (e.phase == "ended") then
-            firebaseCrash.recordError("error test 123", 33)
+            firebaseCrashlytics.recordError("error test 123", 33, {{declaringClass="testClass", methodName = "onEvent", fileName = "main.lua", lineNumber = 25 }})
         end
     end
 } )
